@@ -52,8 +52,8 @@ pip install -r requirements.txt
 pip3 install -r requirements.txt
 ```
 ### 2. Start the backend server
-```Bash python app.py
-
+```Bash
+ python app.py
 # or
 python3 app.py
 ```
