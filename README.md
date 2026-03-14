@@ -36,10 +36,11 @@ ecc-demo-system/
 └── README.md                   # ← This file
 text## Prerequisites
 ```
+```Bash
 - Python 3.8 or newer
 - Modern web browser (Chrome, Edge, Firefox, etc.)
 - No Node.js, npm, React, Vite, etc. required
-
+```
 ## Installation & Running
 
 ### 1. Backend setup
@@ -58,30 +59,31 @@ pip3 install -r requirements.txt
 python3 app.py
 ```
 You should see:
+```Bash
 text* Running on http://127.0.0.1:5000
 → Keep this terminal open the whole time.
-
+```
 ### 3. Open the frontend
-
+```Bash
 Go to frontend/ folder
 Double-click index.html
 or drag it into browser
 or right-click → Open with → Chrome/Edge/Firefox
-
+```
 ### 4. Quick test
-
+```Bash
 Click Load Toy Example (p=17)
 Click any operation button:
 Add Points →
 k × Point →
 Compute Keys & Shared Secret
-
+```
 See result in text box + red point update on the graph
 
 #### Important Notes
 
 "Failed to fetch" error → most common issue
-
+```Bash
 → Make sure backend terminal is still open and running
 → Open http://127.0.0.1:5000/ in browser → should show "ECC Demo API is running ✓"
 → If port 5000 is blocked, change port in app.py to 5001 and update API_BASE in script.js
@@ -89,9 +91,9 @@ Small primes (p=17, 19, 23, 29…) work best for visualization
 
 Large p makes plotting very slow
 Infinity point (∞) is mathematically correct — not an error
-
+```
 #### Example Results (toy curve: y² = x³ + 7 mod 17)
-
+```Bash
 (1,5) + (2,7) → (6,3)
 3 × (1,5) → (13,1)
 ECDH:
@@ -99,15 +101,15 @@ G = (1,5)
 Alice private = 3 → public = (13,1)
 Bob private = 5 → public = (10,6)
 Shared secret = (7,11)
+```
 
 
-ProblemQuick fixButtons do nothingBackend not running → restart python app.pyFailed to fetch / network errorCheck terminal, visit http://127.0.0.1:5000/, try different browserNo red point on canvasResult is ∞ or invalid point → try different inputsCanvas empty / no dotsUse small p (≤ 50), reload after changing parametersCORS errorShould not happen (flask-cors is used) — refresh or restart backend
-Tech Stack
-
+### Tech Stack
+```Bash
 Backend: Python 3 + Flask + pure math
 Frontend: HTML5 + CSS + JavaScript + Canvas
 No dependencies for frontend
 No cryptography libraries (learning purpose only)
-
+```
 #### License
 MIT License – free to use, modify, share for education.
