@@ -34,7 +34,8 @@ ecc-demo-system/
 │       ├── script.js           # API calls + UI logic
 │       └── visualize.js        # Canvas drawing logic
 └── README.md                   # ← This file
-text## Prerequisites
+```
+## Prerequisites
 ```
 ```Bash
 - Python 3.8 or newer
