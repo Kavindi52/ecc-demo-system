@@ -60,9 +60,10 @@ python3 app.py
 ```
 You should see:
 ```Bash
-text* Running on http://127.0.0.1:5000
-→ Keep this terminal open the whole time.
+Running on http://127.0.0.1:5000
 ```
+→ Keep this terminal open the whole time.
+
 ### 3. Open the frontend
 ```Bash
 Go to frontend/ folder
