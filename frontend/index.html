@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECC Demo System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>🔐 Elliptic Curve Cryptography Demo</h1>
+    <p>Basic operations + real ECDH key exchange with visualization</p>
+
+    <!-- Curve Parameters -->
+    <section class="card">
+        <h2>Curve Parameters (y² = x³ + ax + b mod p)</h2>
+        <div class="inputs">
+            <label>a: <input id="a" type="number" value="0"></label>
+            <label>b: <input id="b" type="number" value="7"></label>
+            <label>p (prime): <input id="p" type="number" value="17"></label>
+        </div>
+        <button onclick="loadExample()">Load Toy Example (p=17)</button>
+    </section>
+
+    <!-- Visualization Canvas -->
+    <section class="card">
+        <h2>Curve & Points Visualization</h2>
+        <canvas id="eccCanvas" width="680" height="520" style="background:#0f172a; border-radius:8px; display:block; margin:10px auto;"></canvas>
+        <p style="font-size:0.9em; color:#94a3b8; text-align:center; margin-top:8px;">
+            Blue line: continuous approximation (real numbers)<br>
+            Dark dots: points on the curve over 𝔽ₚ<br>
+            Red dot: current computation result (if applicable)
+        </p>
+    </section>
+
+    <!-- Basic Operations -->
+    <section class="card">
+        <h2>1. Point Addition</h2>
+        <div class="inputs">
+            <label>P1 (x1): <input id="x1" value="1"></label>
+            <label>(y1): <input id="y1" value="5"></label>
+            <label>P2 (x2): <input id="x2" value="2"></label>
+            <label>(y2): <input id="y2" value="7"></label>
+        </div>
+        <button onclick="addPoints()">Add Points →</button>
+        <div id="addResult" class="result"></div>
+    </section>
+
+    <section class="card">
+        <h2>2. Scalar Multiplication</h2>
+        <div class="inputs">
+            <label>Point (x): <input id="mx" value="1"></label>
+            <label>(y): <input id="my" value="5"></label>
+            <label>k (scalar): <input id="k" type="number" value="3"></label>
+        </div>
+        <button onclick="multiplyPoint()">k × Point →</button>
+        <div id="mulResult" class="result"></div>
+    </section>
+
+    <!-- ECDH Demo -->
+    <section class="card">
+        <h2>3. ECDH Key Exchange (Cryptographic Use Case)</h2>
+        <div class="inputs">
+            <label>Generator G (x): <input id="gx" value="1"></label>
+            <label>(y): <input id="gy" value="5"></label>
+            <label>Alice Private Key: <input id="priv_a" type="number" value="3"></label>
+            <label>Bob Private Key: <input id="priv_b" type="number" value="5"></label>
+        </div>
+        <button onclick="runECDH()">Compute Keys & Shared Secret</button>
+        <div id="ecdhResult" class="result"></div>
+    </section>
+
+    <footer>
+        Backend runs on http://127.0.0.1:5000 • All math is done server-side
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/visualize.js"></script>
+</body>
+</html>
