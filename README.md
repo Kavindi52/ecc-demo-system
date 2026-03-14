@@ -20,6 +20,7 @@ Frontend uses only HTML + CSS + JavaScript + Canvas (no frameworks, no build ste
 - Responsive, dark-themed UI
 
 ### Project Folder Structure
+
 ```bash
 ecc-demo-system/
 ├── backend/
@@ -36,7 +37,7 @@ ecc-demo-system/
 └── README.md                   # ← This file
 ```
 ## Prerequisites
-```
+
 ```Bash
 - Python 3.8 or newer
 - Modern web browser (Chrome, Edge, Firefox, etc.)
